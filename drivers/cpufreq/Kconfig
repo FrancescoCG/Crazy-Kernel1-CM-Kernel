@@ -183,6 +183,12 @@ config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
 	help
 	Use the CPUFreq governor 'pegasusq' as default.
 
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+            bool "lionheart"
+            select CPU_FREQ_GOV_LIONHEART
+            help
+              Use the CPUFreq governor 'lionheart' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -356,14 +362,7 @@ config CPU_FREQ_GOV_ONDEMANDPLUS
 	tristate "'ondemandplus' cpufreq governor"
 	depends on CPU_FREQ	  
 
-config CPU_FREQ_GOV_YANKACTIVE
-	  tristate "'yankactive' cpufreq policy governor"
-	  help
-	  'yankactive' - This driver adds a dynamic cpufreq policy governor
-	  designed for latency-sensitive workloads.
-	  The governor is based on interactive with just different default settings
-	  and can be achieved using interactive with a script. This is added for
-	  simplification purposes for myself.
+          If in doubt, say N.
 
 
 config CPU_FREQ_GOV_LIONHEART
@@ -372,14 +371,7 @@ config CPU_FREQ_GOV_LIONHEART
            help
              lionheart' - a "smart" optimized governor!
              If in doubt, say N.
-             
-config CPU_FREQ_GOV_NIGHTMARE
-	tristate "'nightmare' cpufreq governor"
-	depends on CPU_FREQ
-	
-config CPU_FREQ_GOV_PEGASUSQ
-	tristate "'pegasusq' cpufreq policy governor"	
-            
+
 menu "x86 CPU frequency scaling drivers"
 depends on X86
 source "drivers/cpufreq/Kconfig.x86"
