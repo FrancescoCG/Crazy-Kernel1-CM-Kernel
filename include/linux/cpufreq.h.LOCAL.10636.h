@@ -451,7 +451,6 @@ extern struct cpufreq_governor cpufreq_gov_smartmax;
 extern struct cpufreq_governor cpufreq_gov_impulse;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_impulse)
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMANDPLUS)
 extern struct cpufreq_governor cpufreq_gov_ondemandplus;
@@ -460,11 +459,6 @@ extern struct cpufreq_governor cpufreq_gov_ondemandplus;
 extern struct cpufreq_governor cpufreq_gov_yankactive;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_yankactive)
 >>>>>>> f4e7d64... cpufreq: Add yankactive governor
-=======
-#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMANDPLUS)
-extern struct cpufreq_governor cpufreq_gov_ondemandplus;
-#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_ondemandplus)
->>>>>>> 0265a0c... cpufreq: Add ondemandplus governor
 #endif
 
 /*********************************************************************
