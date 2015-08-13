@@ -291,10 +291,6 @@ config CPU_FREQ_GOV_IMPULSE
 	  designed for optimized balance between power and performance.
 
 	  If in doubt, say N.
-<<<<<<< HEAD
-
-=======
->>>>>>> 0265a0c... cpufreq: Add ondemandplus governor
 	  
 config CPU_FREQ_GOV_ONDEMANDPLUS
 	tristate "'ondemandplus' cpufreq governor"
