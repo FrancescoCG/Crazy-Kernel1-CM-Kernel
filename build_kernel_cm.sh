@@ -1,17 +1,17 @@
 #!/bin/sh
 export KERNELDIR=`readlink -f .`
-export RAMFS_SOURCE="/home/francesco/Googy-Max4-Kernel/Ramdisks/ramfs_cm12"
+export RAMFS_SOURCE="/home/francesco/Googy-Max4-Kernel/Ramdisks/ramfs_cm12.1"
 export PARENT_DIR=`readlink -f ..`
 export USE_SEC_FIPS_MODE=true
 export CROSS_COMPILE=/home/francesco/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4-2015.06/bin/arm-cortex_a15-linux-gnueabihf-
 
-# if [ "v2" != "" ];then
-#  export KERNELDIR=`readlink -f v2`
+# if [ "v5" != "" ];then
+#  export KERNELDIR=`readlink -f v5`
 # fi
 
 RAMFS_TMP="/home/francesco/Googy-Max4-Kernel/tmp_cm/ramfs"
 
-VER="\"-GoogyMax4_CM-v2\""
+VER="\"-GoogyMax4_CM-v5\""
 cp -f /home/francesco/Googy-Max4-Kernel/Kernel_cm/arch/arm/configs/0googymax4_CM_defconfig /home/francesco/Googy-Max4-Kernel/0googymax4_CM_defconfig
 sed "s#^CONFIG_LOCALVERSION=.*#CONFIG_LOCALVERSION=$VER#" /home/francesco/Googy-Max4-Kernel/0googymax4_CM_defconfig > /home/francesco/Googy-Max4-Kernel/Kernel_cm/arch/arm/configs/0googymax4_CM_defconfig
 
@@ -60,11 +60,11 @@ tools/mkbootimg --cmdline 'console=null androidboot.hardware=qcom user_debug=23 
 cd /home/francesco/Googy-Max4-Kernel
 mv -f -v /home/francesco/Googy-Max4-Kernel/Kernel_cm/boot.img /home/francesco/Googy-Max4-Kernel/G900F_GoogyMax4_CM.CWM/boot.img
 cd /home/francesco/Googy-Max4-Kernel/G900F_GoogyMax4_CM.CWM
-zip -r ../GoogyMax4_CM-Kernel_v2_CWM.zip .
+zip -r ../GoogyMax4_CM-Kernel_v5_CWM.zip .
 
-adb push /home/francesco/Googy-Max4-Kernel/GoogyMax4_CM-Kernel_v2_CWM.zip /storage/sdcard1/GoogyMax4_CM-Kernel_${1}_CWM.zip
+adb push /home/francesco/Googy-Max4-Kernel/GoogyMax4_CM-Kernel_v5_CWM.zip /storage/sdcard1/GoogyMax4_CM-Kernel_${1}_CWM.zip
 
-# adb push /home/francesco/Googy-Max4-Kernel/GoogyMax4_CM-Kernel_v2_CWM.zip /storage/sdcard1/update-gmax4.zip
+# adb push /home/francesco/Googy-Max4-Kernel/GoogyMax4_CM-Kernel_v5_CWM.zip /storage/sdcard1/update-gmax4.zip
 # 
 # adb shell su -c "echo 'boot-recovery ' > /cache/recovery/command"
 # adb shell su -c "echo '--update_package=/storage/sdcard0/update-gmax4.zip' >> /cache/recovery/command"
