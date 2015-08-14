@@ -1,6 +1,6 @@
 #!/bin/sh
 export KERNELDIR=`readlink -f .`
-export RAMFS_SOURCE="/home/francesco/Googy-Max4-Kernel/Ramdisks/ramfs_cm12.1"
+export RAMFS_SOURCE="/home/francesco/Googy-Max4-Kernel/Kernel_cm/Ramdisks/ramfs_cm12.1"
 export PARENT_DIR=`readlink -f ..`
 export USE_SEC_FIPS_MODE=true
 export CROSS_COMPILE=/home/francesco/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4-2015.06/bin/arm-cortex_a15-linux-gnueabihf-
@@ -9,7 +9,7 @@ export CROSS_COMPILE=/home/francesco/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4
 #  export KERNELDIR=`readlink -f v5`
 # fi
 
-RAMFS_TMP="/home/francesco/Googy-Max4-Kernel/tmp_cm/ramfs"
+RAMFS_TMP="/home/francesco/Googy-Max4-Kernel/Kernel_cm/tmp_cm/ramfs"
 
 VER="\"-GoogyMax4_CM-v5\""
 cp -f /home/francesco/Googy-Max4-Kernel/Kernel_cm/arch/arm/configs/0googymax4_CM_defconfig /home/francesco/Googy-Max4-Kernel/0googymax4_CM_defconfig
