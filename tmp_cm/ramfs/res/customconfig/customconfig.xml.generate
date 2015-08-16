@@ -30,6 +30,11 @@ cat << ENDCONFIG
              <spinnerItem name="Powersave" value="powersave"/>
              <spinnerItem name="Performance" value="performance"/> 
              <spinnerItem name="Userspace" value="userspace"/> 
+             <spinnerItem name="Yankactive" value="yankactive"/> 
+             <spinnerItem name="Smartmax_eps" value="smartmax_eps"/> 
+             <spinnerItem name="Weatley" value="weatley"/>
+             <spinnerItem name="Intelliactive" value="intelliactive"/> 
+             <spinnerItem name="Intellidemand" value="intellidemand"/> 
        </spinner>
 
       <spinner description="Set the maximum frequency the CPU scales up to. Default: 2457 MHz." 
@@ -214,6 +219,7 @@ cat << ENDCONFIG
              <spinnerItem name="vr" value="vr"/> 
              <spinnerItem name="fifo" value="fifo"/> 
              <spinnerItem name="zen" value="zen"/> 
+             <spinnerItem name="test-iosched" value="test-iosched"/>
       </spinner>
       <seekBar  description="The read-ahead value for the internal storage. Default: 512" 
                 name="Internal storage read-ahead" 
