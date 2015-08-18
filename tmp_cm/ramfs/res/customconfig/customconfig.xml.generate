@@ -80,11 +80,11 @@ cat << ENDCONFIG
              <spinnerItem name="1958 MHz" value="1958400"/> 
              <spinnerItem name="2265 MHz" value="2265600"/> 
              <spinnerItem name="2457 MHz" value="2457600"/>
-             <spinnerItem name="2841 MHz" value="2841600"/> 
-             <spinnerItem name="2764 MHz" value="2764800"/> 
-             <spinnerItem name="2688 MHz" value="2688000"/> 
-             <spinnerItem name="2611 MHz" value="2611200"/> 
              <spinnerItem name="2534 MHz" value="2534400"/> 
+             <spinnerItem name="2611 MHz" value="2611200"/> 
+             <spinnerItem name="2688 MHz" value="2688000"/> 
+             <spinnerItem name="2764 MHz" value="2764800"/>                                                     
+             <spinnerItem name="2841 MHz" value="2841600"/> 
        </spinner>
        
     </settingsPane>
