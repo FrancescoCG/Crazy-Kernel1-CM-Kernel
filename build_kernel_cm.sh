@@ -5,13 +5,13 @@ export PARENT_DIR=`readlink -f ..`
 export USE_SEC_FIPS_MODE=true
 export CROSS_COMPILE=/home/francesco/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4-2015.06/bin/arm-cortex_a15-linux-gnueabihf-
 
-# if [ "v7" != "" ];then
-#  export KERNELDIR=`readlink -f v7`
+# if [ "v8" != "" ];then
+#  export KERNELDIR=`readlink -f v8`
 # fi
 
 RAMFS_TMP="/home/francesco/Crazy-Kernel/Kernel_cm/tmp_cm/ramfs"
 
-VER="\"-CrazyKernel1_CM-v7\""
+VER="\"-CrazyKernel1_CM-v8\""
 cp -f /home/francesco/Crazy-Kernel/Kernel_cm/arch/arm/configs/0crazykernel1_CM_defconfig /home/francesco/Crazy-Kernel/0crazykernel1_CM_defconfig
 sed "s#^CONFIG_LOCALVERSION=.*#CONFIG_LOCALVERSION=$VER#" /home/francesco/Crazy-Kernel/0crazykernel1_CM_defconfig > /home/francesco/Crazy-Kernel/Kernel_cm/arch/arm/configs/0crazykernel1_CM_defconfig
 
@@ -24,7 +24,7 @@ export KCONFIG_NOTIMESTAMP=true
 export ARCH=arm
 
 cd $KERNELDIR/
-make -j3 || exit 1
+make -j5 || exit 1
 
 #remove previous ramfs files
 rm -rf $RAMFS_TMP
@@ -60,11 +60,11 @@ tools/mkbootimg --cmdline 'console=null androidboot.hardware=qcom user_debug=23 
 cd /home/francesco/Crazy-Kernel
 mv -f -v /home/francesco/Crazy-Kernel/Kernel_cm/boot.img /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM/boot.img
 cd /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM
-zip -r ../CrazyKernel1_CM-Kernel_v7_CWM.zip .
+zip -r ../CrazyKernel1_CM-Kernel_v8_CWM.zip .
 
-adb push /home/francesco/Crazy-Kernel/CrazyKernel1_CM-Kernel_v7_CWM.zip /storage/sdcard1/CrazyKernel1_CM-Kernel_${1}_CWM.zip
+adb push /home/francesco/Crazy-Kernel/CrazyKernel1_CM-Kernel_v8_CWM.zip /storage/sdcard1/CrazyKernel1_CM-Kernel_${1}_CWM.zip
 
-# adb push /home/francesco/Crazy-Kernel/CrazyKernel1_CM-Kernel_v7_CWM.zip /storage/sdcard1/update-crazykernel1.zip
+# adb push /home/francesco/Crazy-Kernel/CrazyKernel1_CM-Kernel_v8_CWM.zip /storage/sdcard1/update-crazykernel1.zip
 # 
 # adb shell su -c "echo 'boot-recovery ' > /cache/recovery/command"
 # adb shell su -c "echo '--update_package=/storage/sdcard0/update-crazykernel1.zip' >> /cache/recovery/command"

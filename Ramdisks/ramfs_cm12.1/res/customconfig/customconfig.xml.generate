@@ -35,6 +35,7 @@ cat << ENDCONFIG
              <spinnerItem name="Weatley" value="weatley"/>
              <spinnerItem name="Intelliactive" value="intelliactive"/> 
              <spinnerItem name="Intellidemand" value="intellidemand"/> 
+             <spinnerItem name="Optimax" value="optimax"/>
        </spinner>
 
       <spinner description="Set the maximum frequency the CPU scales up to. Default: 2457 MHz." 
