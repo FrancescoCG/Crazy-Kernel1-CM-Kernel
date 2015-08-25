@@ -45,7 +45,7 @@ rm -rf $RAMFS_TMP/.hg
 mkdir -p /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM/system/lib/modules
 rm -rf /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM/system/lib/modules/*
 find -name '*.ko' -exec cp -av {} /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM/system/lib/modules/ \;
-${CROSS_COMPILE}strip --strip-unneeded /home/francesco/GCrazy-Kernel/G900F_CrazyKernel1_CM.CWM/system/lib/modules/*
+${CROSS_COMPILE}strip --strip-unneeded /home/francesco/Crazy-Kernel/G900F_CrazyKernel1_CM.CWM/system/lib/modules/*
 
 cd $RAMFS_TMP
 find | fakeroot cpio -H newc -o > $RAMFS_TMP.cpio 2>/dev/null
